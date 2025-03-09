@@ -39,7 +39,7 @@ const Navbar = () => {
           <FiX />
         </button>
         <ul className="mt-16 space-y-6 text-center">
-          <li><Link to="/" className="block py-3 text-[f04642] hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/" className="block py-3 text-[#f04642] hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Home</Link></li>
           <li><Link to="/about" className="block py-3 text-gray-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About</Link></li>
           <li><Link to="/order" className="block py-3 text-gray-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Order</Link></li>
           <li><Link to="/contact" className="block py-3 text-gray-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Contact</Link></li>
