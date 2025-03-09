@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="bg-gray-100 text-gray-900">
     {/* Hero Section */}
-    <section className="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-white text-center" style={{ backgroundImage: "url('/hero-image.jpg')" }}>
+    <section className="bg-cover bg-center h-[80vh] flex items-center justify-center text-white text-center" style={{ backgroundImage: "url('/hero-image.jpg')" }}>
       <div className="bg-black bg-opacity-50 p-10 rounded-lg">
         <h1 className="text-4xl font-bold">Quality Diesel at Your Doorstep</h1>
         <p className="mt-4 text-lg">Reliable, prompt, and premium fuel delivery services.</p>
