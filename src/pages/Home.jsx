@@ -5,9 +5,9 @@ const Home = () => {
     <div className="bg-gray-100 text-gray-900">
     {/* Hero Section */}
     <section className="bg-cover bg-center h-[80vh] flex items-center justify-center text-white text-center" style={{ backgroundImage: "url(src/assets/different-fuel-pistols-somewhere-amsterdam-city.jpg)" }}>
-      <div className="bg-white  p-9 rounded-lg">
-        <h1 className="text-4xl text-black font-bold">Quality Diesel at Your Doorstep</h1>
-        <p className="mt-4 text-lg text-black">Reliable, prompt, and premium fuel delivery services.</p>
+      <div className="mt-20 bg-black  p-9 rounded-lg">
+        <h1 className="text-4xl  font-bold">Quality Diesel at Your Doorstep</h1>
+        <p className="mt-4 text-lg ">Reliable, prompt, and premium fuel delivery services.</p>
         <a href="/order" className="mt-6 inline-block bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600">Order Now</a>
       </div>
     </section>
