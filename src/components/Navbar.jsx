@@ -6,23 +6,23 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full  bg-black shadow-md py-4">
+    <nav className="fixed top-0 left-0 w-full bg-black/90 shadow-md py-4">
       <div className="container mx-auto flex justify-between items-center px-6">
-        <NavLink to="/" className="w-20 h-20">
+        <NavLink to="/" className="w-30 h-15 mb-7">
           <img src="src/assets/oie_jx2oGHsG46Oh.png" alt="logo" />
         </NavLink>
         
         {/* Hamburger Menu Button */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-gray-900 text-2xl">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white text-2xl">
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          <li><NavLink to="/" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-900 hover:text-yellow-500"}>Home</NavLink></li>
-          <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-900 hover:text-yellow-500"}>About</NavLink></li>
-          <li><NavLink to="/order" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-900 hover:text-yellow-500"}>Order</NavLink></li>
-          <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-900 hover:text-yellow-500"}>Contact</NavLink></li>
+          <li><NavLink to="/" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-100 hover:text-yellow-500"}>Home</NavLink></li>
+          <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-100 hover:text-yellow-500"}>About</NavLink></li>
+          <li><NavLink to="/order" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-100 hover:text-yellow-500"}>Order</NavLink></li>
+          <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-yellow-500 font-bold" : "text-gray-100 hover:text-yellow-500"}>Contact</NavLink></li>
         </ul>
       </div>
 

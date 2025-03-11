@@ -2,38 +2,33 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="bg-gray-100 text-gray-900">
-      {/* Hero Section */}
-      <section className="bg-cover bg-center h-[50vh] flex mt-10 items-center justify-center text-white text-center" style={{ backgroundImage: "url('/about-hero.jpg')" }}>
-        <div className="bg-black bg-opacity-50 mt-20 p-10 rounded-lg">
-          <h1 className="text-4xl font-bold">About Us</h1>
-          <p className="mt-4 text-lg">Providing reliable diesel supply with excellence.</p>
-        </div>
-      </section>
-      
-      {/* Company Overview */}
-      <section className="py-16 px-6 md:px-16 text-center">
-        <h2 className="text-3xl font-bold">Who We Are</h2>
-        <p className="mt-4 text-lg">We are a trusted diesel supplier, dedicated to delivering high-quality fuel promptly to homes and businesses.</p>
-      </section>
-      
-      {/* Our Mission & Vision */}
-      <section className="py-16 bg-gray-200 text-center px-6 md:px-16">
-        <h2 className="text-3xl font-bold">Our Mission & Vision</h2>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold">Our Mission</h3>
-            <p className="mt-2">To ensure seamless diesel supply with efficiency, affordability, and exceptional customer service.</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold">Our Vision</h3>
-            <p className="mt-2">To be the most reliable and customer-focused diesel supplier in the industry.</p>
-          </div>
-        </div>
-      </section>
-    </div>
+<section className="bg-[url('/src/assets/about-bg.jpg')] bg-cover bg-center py-20 text-white">
+  <div className="container mx-auto px-6 lg:px-20 bg-black/70 p-10 rounded-lg">
+    <h2 className="text-4xl font-bold text-center">About Us — Pride Energy Express</h2>
+    <p className="mt-6 text-lg text-gray-200 leading-relaxed">
+      At Pride Energy Express, we are committed to powering progress by delivering reliable and efficient diesel distribution services across Nigeria. 
+      Specializing in the supply of high-quality diesel to residential, corporate, manufacturing, and industrial locations, we bridge the gap between 
+      energy demands and seamless fuel solutions.
+    </p>
+    
+    <p className="mt-4 text-lg text-gray-200 leading-relaxed">
+      Our mission is simple: to provide consistent, timely, and cost-effective fuel delivery tailored to the unique needs of our clients. Whether you are a 
+      business requiring uninterrupted power supply or a household seeking dependable fuel solutions, Pride Energy Express is your trusted energy partner.
+    </p>
+
+    <p className="mt-4 text-lg text-gray-200 leading-relaxed">
+      What sets us apart is our unwavering dedication to customer satisfaction, transparency, and operational excellence. We understand the critical role energy 
+      plays in driving productivity, which is why we prioritize swift logistics, safe handling, and top-tier service at every touchpoint.
+    </p>
+
+    <p className="mt-4 text-lg text-gray-200 leading-relaxed font-semibold">
+      At Pride Energy Express, we don’t just supply diesel — we deliver energy solutions that keep your world running.
+    </p>
+  </div>
+</section>
   );
 };
 
 export default About;
+
 
