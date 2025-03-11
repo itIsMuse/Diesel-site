@@ -29,18 +29,23 @@ const Home = () => {
 
 
     {/* Features Section */}
-    <section className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16">
+    <section style={{
+    backgroundImage: "url(/assets/IMG_1997.JPG)",
+    backgroundSize: "cover",      // Ensures the image covers the entire section
+    backgroundPosition: "center", // Centers the image
+    backgroundRepeat: "no-repeat" // Prevents repeating
+  }}className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16">
       <h2 className="text-3xl font-bold ">Why Choose Us?</h2>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="bg-white/60 p-6 rounded-lg shadow">
           <h3 className="text-xl font-bold">Prompt Delivery</h3>
           <p className="mt-2">We ensure timely delivery to your location, hassle-free.</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="bg-white/60 p-6 rounded-lg shadow">
           <h3 className="text-xl font-bold">Competitive Pricing</h3>
           <p className="mt-2">Get the best rates on high-quality diesel fuel.</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="bg-white/60 p-6 rounded-lg shadow">
           <h3 className="text-xl font-bold">24/7 Customer Support</h3>
           <p className="mt-2">We're here to assist you anytime, anywhere.</p>
         </div>
