@@ -7,7 +7,7 @@ const Home = () => {
   {/* Merged Hero & About Section */}
   <section 
     className="bg-cover bg-center min-h-[80vh] flex flex-col items-center justify-center text-white text-center px-6 py-16" 
-    style={{ backgroundImage: "url(src/assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)" }}
+    style={{ backgroundImage: "url(public/assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)" }}
   >
     {/* Hero Section */}
     <div className="mt-20 p-6 rounded-lg bg-black/60">

@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-<section className="bg-[url('src/assets/different-fuel-pistols-somewhere-amsterdam-city.jpg')] bg-cover bg-center py-20 text-white">
+<section className="bg-[url('public/assets/different-fuel-pistols-somewhere-amsterdam-city.jpg')] bg-cover bg-center py-20 text-white">
   <div className="container mx-auto px-6 lg:px-20 bg-black/70 p-10 rounded-lg">
     <h2 className="text-4xl font-bold text-center">About Us — Pride Energy Express</h2>
     <p className="mt-6 text-lg text-gray-200 leading-relaxed">
