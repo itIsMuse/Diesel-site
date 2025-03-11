@@ -1,9 +1,9 @@
 import React from 'react'; 
-import photo from 'public/assets/3d-render-fuel-pump-nozzle-isolated-color-background.jpg'
+// import photo from 'public/assets/3d-render-fuel-pump-nozzle-isolated-color-background.jpg'
 
 const About = () => {
   return (
-<section style={{ backgroundImage: `url(${photo})`}} className="bg-[url('public/assets/different-fuel-pistols-somewhere-amsterdam-city.jpg')] bg-cover bg-center py-20 text-white">
+<section style={{ backgroundImage: `url(${photo})`}} className="bg-[url('/assets/different-fuel-pistols-somewhere-amsterdam-city.jpg')] bg-cover bg-center py-20 text-white">
   <div className="container mx-auto px-6 lg:px-20 bg-black/70 p-10 rounded-lg">
     <h2 className="text-4xl font-bold text-center">About Us — Pride Energy Express</h2>
     <p className="mt-6 text-lg text-gray-200 leading-relaxed">
