@@ -6,7 +6,7 @@ const Home = () => {
     <div className="bg-gray-100 text-gray-900">
   {/* Merged Hero & About Section */}
   <section 
-    className="bg-cover bg-center min-h-[80vh] flex flex-col items-center justify-center text-white text-center px-6 py-16" 
+    className="bg-cover bg-center min-h-[90vh] flex flex-col items-center justify-center text-white text-center px-6 py-16" 
     style={{ backgroundImage: "url(/assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)" }}
   >
     {/* Hero Section */}
