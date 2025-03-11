@@ -6,7 +6,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/90 shadow-md py-4">
+    <nav className="fixed top-0 left-0 w-full bg-black/90 shadow-md py-4">
       <div className="container mx-auto flex justify-between items-center px-6">
         <NavLink to="/" className="w-30 h-15 mb-7">
           <img src="/assets/oie_jx2oGHsG46Oh.png" alt="logo" />
