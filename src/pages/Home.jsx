@@ -10,7 +10,7 @@ const Home = () => {
     style={{ backgroundImage: "url(/assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)" }}
   >
     {/* Hero Section */}
-    <div className="mt-20 p-6 rounded-lg bg-white/60">
+    <div className="mt-20 p-6 rounded-lg bg-black/60">
       <h1 className="text-4xl font-bold">Quality Diesel at Your Doorstep</h1>
       <p className="mt-4 text-lg">Reliable, prompt, and premium fuel delivery services.</p>
       <Link to="/order" className="mt-6 inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600">
