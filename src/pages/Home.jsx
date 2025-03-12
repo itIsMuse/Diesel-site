@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className="bg-gray-100 text-gray-900">
+    <div className="bg-transparent text-gray-900">
   {/* Merged Hero & About Section */}
-  <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 overflow-hidden">
+  <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 mt-10">
     
     {/* Background Video */}
     <video 
@@ -15,7 +15,7 @@ const Home = () => {
       playsInline
       className="absolute top-0 left-0 w-full h-full object-cover -z-10"
     >
-      <source src="your-video-url.mp4" type="video/mp4" />
+      <source src="/assets/diesel.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
@@ -40,7 +40,7 @@ const Home = () => {
 
     {/* Features Section */}
     <section style={{
-    backgroundImage: "url(/assets/IMG_1997.JPG)",
+    backgroundImage: "url(assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)",
     backgroundSize: "cover",      // Ensures the image covers the entire section
     backgroundPosition: "center", // Centers the image
     backgroundRepeat: "no-repeat" // Prevents repeating
