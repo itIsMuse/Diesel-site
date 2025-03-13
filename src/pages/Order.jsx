@@ -30,7 +30,7 @@ const Order = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -41,7 +41,7 @@ const Order = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -52,7 +52,7 @@ const Order = () => {
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -63,7 +63,7 @@ const Order = () => {
               name="location"
               value={formData.location}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>

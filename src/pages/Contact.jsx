@@ -29,7 +29,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
+              className=" text-gray-800 w-full p-3 border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
               required
             />
           </div>
@@ -40,7 +40,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
+              className="text-gray-800 w-full p-3 border-yellow-500 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
               required
             />
           </div>
@@ -50,7 +50,7 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg h-32"
+              className="text-gray-800 w-full border-yellow-500 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg h-32"
               required
             ></textarea>
           </div>
