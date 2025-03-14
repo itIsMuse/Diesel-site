@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* Logo Centered */}
       <div className="absolute left-1/2 transform -translate-x-1/2 mt-10">
         <NavLink to="/">
-          <img src="/assets/oie_jx2oGHsG46Oh.png" alt="logo" className="h-20 w-auto max-w-[250px]" />
+          <img src="/assets/IMG_97672.png" alt="logo" className=" h-25 w-auto max-w-[250px]" />
         </NavLink>
       </div>
   
