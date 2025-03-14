@@ -30,7 +30,7 @@ const Order = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -41,7 +41,7 @@ const Order = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -52,20 +52,28 @@ const Order = () => {
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
           <div>
             <label className="block text-gray-700">Location</label>
             <input
-              type="text"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              className="text-gray-900 border-yellow-300 bg-yellow-200 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
-              required
-            />
+  type="text"
+  name="location"
+  list="locations"
+  value={formData.location}
+  onChange={handleChange}
+  className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+  required
+/>
+<datalist id="locations">
+  <option value="Lagos" />
+  <option value="Abuja" />
+  <option value="Port Harcourt" />
+  <option value="Ibadan" />
+  <option value="Kano" />
+</datalist>
           </div>
           <button
             type="submit"

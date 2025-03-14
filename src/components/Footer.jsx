@@ -7,7 +7,7 @@ const Footer = () => {
         
         {/* Company Info */}
         <div>
-          <h2 className="text-xl font-semibold text-white">Diesel Direct</h2>
+        <img src="/assets/IMG_97672.png" alt="logo" className=" h-25 w-auto max-w-[250px] mx-auto" />
           <p className="mt-2 text-sm">
             Providing high-quality diesel with fast and reliable delivery services to homes and businesses.
           </p>
