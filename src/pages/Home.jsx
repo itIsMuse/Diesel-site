@@ -15,12 +15,12 @@ const Home = () => {
       playsInline
       className="absolute top-0 left-0 w-full h-full object-cover -z-10"
     >
-      <source src="/assets/diesel.mp4" type="video/mp4" />
+      <source src="/assets/AZMT Motor Oil _1741953012.975178.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
     {/* Hero Content */}
-    <div className="relative mt-20 p-6 rounded-lg bg-black/60">
+    <div className="relative mt-20 mb-5 p-6 rounded-lg bg-black/60">
 
       <h1 className="text-4xl font-bold">Quality Diesel at Your Doorstep</h1>
       <p className="mt-4 text-lg">Reliable, prompt, and premium fuel delivery services.</p>
@@ -32,9 +32,9 @@ const Home = () => {
 
   {/* About Section with Background Image */}
   <section 
-    className="relative min-h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 pt-10 "
+    className=" mt-10 relative min-h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 pt-10 "
     style={{
-      backgroundImage: "url(/assets/AboutUs.jpg)",
+      backgroundImage: "url(/assets/IMG_2042.JPG)",
       backgroundSize: "cover",      // Ensures the image covers the entire section
       backgroundPosition: "center", // Centers the image
       backgroundRepeat: "no-repeat" // Prevents repeating
@@ -50,12 +50,12 @@ const Home = () => {
 
 
     {/* Features Section */}
-    <section style={{
+    <section  style={{
     backgroundImage: "url(/assets/IMG_1997.JPG)",
     backgroundSize: "cover",      // Ensures the image covers the entire section
     backgroundPosition: "center", // Centers the image
     backgroundRepeat: "no-repeat" // Prevents repeating
-  }}className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16">
+  }}className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16 mt-5">
       <h2 className="text-3xl font-bold ">Why Choose Us?</h2>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white/60 p-6 rounded-lg shadow">
