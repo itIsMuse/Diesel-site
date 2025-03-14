@@ -55,7 +55,7 @@ const Home = () => {
     backgroundSize: "cover",      // Ensures the image covers the entire section
     backgroundPosition: "center", // Centers the image
     backgroundRepeat: "no-repeat" // Prevents repeating
-  }}className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16 mt-5">
+  }}className="py-16 bg-[#fdfa0f]/90 text-center px-6 md:px-16 mt-10 mb-10">
       <h2 className="text-3xl font-bold ">Why Choose Us?</h2>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white/60 p-6 rounded-lg shadow">
