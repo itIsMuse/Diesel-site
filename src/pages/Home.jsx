@@ -32,9 +32,9 @@ const Home = () => {
 
   {/* About Section with Background Image */}
   <section 
-    className="relative min-h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 bg-cover bg-center"
+    className="relative min-h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 py-16 pt-10 "
     style={{
-      backgroundImage: "url(assets/3d-render-fuel-pump-nozzle-isolated-color-backgroun.jpg)",
+      backgroundImage: "url(/assets/AboutUs.jpg)",
       backgroundSize: "cover",      // Ensures the image covers the entire section
       backgroundPosition: "center", // Centers the image
       backgroundRepeat: "no-repeat" // Prevents repeating
