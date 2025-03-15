@@ -18,7 +18,7 @@ const Order = () => {
     // Paystack integration will be added here
   };
 
-  return (
+  urn (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Place Your Order</h2>
@@ -67,19 +67,35 @@ const Order = () => {
   className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
   required
 />
+
 <datalist id="locations">
-  <option value="Lagos" />
-  <option value="Abuja" />
-  <option value="Port Harcourt" />
-  <option value="Ibadan" />
-  <option value="Kano" />
+  <option value="Agege" />
+  <option value="Ajeromi-Ifelodun" />
+  <option value="Alimosho" />
+  <option value="Amuwo-Odofin" />
+  <option value="Badagry" />
+  <option value="Epe" />
+  <option value="Eti-Osa" />
+  <option value="Ibeju-Lekki" />
+  <option value="Ifako-Ijaiye" />
+  <option value="Ikeja" />
+  <option value="Ikorodu" />
+  <option value="Kosofe" />
+  <option value="Lagos Island" />
+  <option value="Lagos Mainland" />
+  <option value="Mushin" />
+  <option value="Ojo" />
+  <option value="Oshodi-Isolo" />
+  <option value="Shomolu" />
+  <option value="Surulere" />
 </datalist>
           </div>
           <button
             type="submit"
             className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+            onSubmit={handleSubmit}
           >
-            Proceed to Payment
+            Continue
           </button>
         </form>
       </div>
