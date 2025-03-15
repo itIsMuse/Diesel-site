@@ -18,7 +18,8 @@ const Order = () => {
     // Paystack integration will be added here
   };
 
-  urn (
+ 
+  return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Place Your Order</h2>
