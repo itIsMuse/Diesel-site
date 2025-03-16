@@ -5,20 +5,61 @@ const Order = () => {
     name: "",
     email: "",
     quantity: "",
-    location: ""
+    location: "",
+    locationAddress: "" // Added specific drop location field
   });
 
+  const [pricePerLiter, setPricePerLiter] = useState(""); // State for price per liter
+  const [totalCost, setTotalCost] = useState(""); // State for total cost
+
+  const prices = {
+    "Agege": 800,
+    "Ajeromi-Ifelodun": 850,
+    "Alimosho": 820,
+    "Amuwo-Odofin": 870,
+    "Badagry": 880,
+    "Epe": 890,
+    "Eti-Osa": 860,
+    "Ibeju-Lekki": 900,
+    "Ifako-Ijaiye": 810,
+    "Ikeja": 830,
+    "Ikorodu": 870,
+    "Kosofe": 840,
+    "Lagos Island": 860,
+    "Lagos Mainland": 850,
+    "Mushin": 820,
+    "Ojo": 880,
+    "Oshodi-Isolo": 830,
+    "Shomolu": 840,
+    "Surulere": 830
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    if (name === "location") {
+      const price = prices[value] || "";
+      setPricePerLiter(price);
+      calculateTotal(price, formData.quantity);
+    }
+
+    if (name === "quantity") {
+      calculateTotal(pricePerLiter, value);
+    }
+  };
+
+  const calculateTotal = (price, quantity) => {
+    const total = price && quantity ? price * quantity : "";
+    setTotalCost(total);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Order Data:", formData);
+    console.log("Order Data:", formData, "Price per liter:", pricePerLiter, "Total Cost:", totalCost);
     // Paystack integration will be added here
   };
 
- 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
@@ -31,7 +72,7 @@ const Order = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -42,7 +83,7 @@ const Order = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
@@ -53,48 +94,59 @@ const Order = () => {
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
-              className="text-gray-900 border-yellow-300  w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
             />
           </div>
           <div>
-            <label className="block text-gray-700">Location</label>
+            <label className="block text-gray-700">Location (LGA)</label>
             <input
-  type="text"
-  name="location"
-  list="locations"
-  value={formData.location}
-  onChange={handleChange}
-  className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
-  required
-/>
-
-<datalist id="locations">
-  <option value="Agege" />
-  <option value="Ajeromi-Ifelodun" />
-  <option value="Alimosho" />
-  <option value="Amuwo-Odofin" />
-  <option value="Badagry" />
-  <option value="Epe" />
-  <option value="Eti-Osa" />
-  <option value="Ibeju-Lekki" />
-  <option value="Ifako-Ijaiye" />
-  <option value="Ikeja" />
-  <option value="Ikorodu" />
-  <option value="Kosofe" />
-  <option value="Lagos Island" />
-  <option value="Lagos Mainland" />
-  <option value="Mushin" />
-  <option value="Ojo" />
-  <option value="Oshodi-Isolo" />
-  <option value="Shomolu" />
-  <option value="Surulere" />
-</datalist>
+              type="text"
+              name="location"
+              list="locations"
+              value={formData.location}
+              onChange={handleChange}
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              required
+            />
+            <datalist id="locations">
+              {Object.keys(prices).map((location) => (
+                <option key={location} value={location} />
+              ))}
+            </datalist>
           </div>
+
+          {/* Specific Drop Location */}
+          <div>
+            <label className="block text-gray-700">Specific Drop Location</label>
+            <input
+              type="text"
+              name="locationAddress"
+              placeholder="2, Ogunlana Drive, Surulere, Lagos."
+              value={formData.locationAddress}
+              onChange={handleChange}
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              required
+            />
+          </div>
+
+          {/* Display Price per Liter */}
+          {pricePerLiter && (
+            <div className="text-gray-700 font-semibold">
+              Price per Liter: <span className="text-yellow-600">₦{pricePerLiter}</span>
+            </div>
+          )}
+
+          {/* Display Total Cost */}
+          {totalCost && (
+            <div className="text-gray-700 font-semibold">
+              Total Cost: <span className="text-green-600">₦{totalCost}</span>
+            </div>
+          )}
+
           <button
             type="submit"
             className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
-            onSubmit={handleSubmit}
           >
             Continue
           </button>
@@ -105,4 +157,3 @@ const Order = () => {
 };
 
 export default Order;
-

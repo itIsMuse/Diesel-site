@@ -17,10 +17,15 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white">Quick Links</h3>
           <ul className="mt-2 space-y-2">
-            <li><Link to="/" className="hover:text-yellow-500">Home</Link></li>
-            <li><Link to="/order" className="hover:text-yellow-500">Order Diesel</Link></li>
-            <li><Link to="/about" className="hover:text-yellow-500">About Us</Link></li>
-            <li><Link to="/contact" className="hover:text-yellow-500">Contact</Link></li>
+            <li><Link to="/" 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-yellow-500">Home</Link></li>
+            <li><Link to="/order" 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-yellow-500">Order Diesel</Link></li>
+            <li><Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-yellow-500">About Us</Link></li>
+            <li><Link to="/contact" 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-yellow-500">Contact</Link></li>
           </ul>
         </div>
   
