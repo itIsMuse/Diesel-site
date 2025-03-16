@@ -6,7 +6,7 @@ const Order = () => {
     email: "",
     quantity: "",
     location: "",
-    locationAddress: "" // Added specific drop location field
+    address: "",
   });
 
   const [pricePerLiter, setPricePerLiter] = useState(""); // State for price per liter
@@ -63,6 +63,11 @@ const Order = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        {/* Informational Text */}
+        <p className="text-red-600 text-sm text-center font-semibold mt-9">
+          Price per litre varies according to the local government area in Lagos.
+        </p>
+
         <h2 className="text-2xl font-bold text-center mb-6">Place Your Order</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -115,15 +120,13 @@ const Order = () => {
               ))}
             </datalist>
           </div>
-
-          {/* Specific Drop Location */}
           <div>
-            <label className="block text-gray-700">Specific Drop Location</label>
+            <label className="block text-gray-700">Location (specific address)</label>
             <input
               type="text"
-              name="locationAddress"
-              placeholder="2, Ogunlana Drive, Surulere, Lagos."
-              value={formData.locationAddress}
+              name="address"
+              placeholder="2, Ogunlana Drive, Surulere"
+              value={formData.address}
               onChange={handleChange}
               className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
