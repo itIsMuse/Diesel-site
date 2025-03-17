@@ -4,6 +4,7 @@ const Order = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     quantity: "",
     location: "",
     address: "",
@@ -13,25 +14,25 @@ const Order = () => {
   const [totalCost, setTotalCost] = useState(""); // State for total cost
 
   const prices = {
-    "Agege": 800,
-    "Ajeromi-Ifelodun": 850,
-    "Alimosho": 820,
-    "Amuwo-Odofin": 870,
-    "Badagry": 880,
-    "Epe": 890,
-    "Eti-Osa": 860,
-    "Ibeju-Lekki": 900,
-    "Ifako-Ijaiye": 810,
-    "Ikeja": 830,
-    "Ikorodu": 870,
-    "Kosofe": 840,
-    "Lagos Island": 860,
-    "Lagos Mainland": 850,
-    "Mushin": 820,
-    "Ojo": 880,
-    "Oshodi-Isolo": 830,
-    "Shomolu": 840,
-    "Surulere": 830
+    "Agege": 1360,
+    "Ajeromi-Ifelodun": 1320,
+    "Alimosho": 1400,
+    "Amuwo-Odofin": 1350,
+    "Badagry": 1500,
+    "Epe": 1520,
+    "Eti-Osa": 1300,
+    "Ibeju-Lekki": 1480,
+    "Ifako-Ijaiye": 1380,
+    "Ikeja": 1350,
+    "Ikorodu": 1460,
+    "Kosofe": 1360,
+    "Lagos Island": 1280,
+    "Lagos Mainland": 1320,
+    "Mushin": 1340,
+    "Ojo": 1450,
+    "Oshodi-Isolo": 1350,
+    "Shomolu": 1350,
+    "Surulere": 1320
   };
 
   const handleChange = (e) => {
@@ -64,7 +65,7 @@ const Order = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         {/* Informational Text */}
-        <p className="text-red-600 text-sm text-center font-semibold mt-9">
+        <p className="text-red-600 text-sm text-center font-semibold mt-9k">
           Price per litre varies according to the local government area in Lagos.
         </p>
 
@@ -87,6 +88,17 @@ const Order = () => {
               type="email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+              className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Phone Number</label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
               onChange={handleChange}
               className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100"
               required
@@ -149,6 +161,7 @@ const Order = () => {
 
           <button
             type="submit"
+            onSubmit={handleSubmit}
             className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
           >
             Continue
