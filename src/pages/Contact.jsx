@@ -1,10 +1,11 @@
 import { useState } from "react";
-
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";  
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -18,9 +19,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#1b1a1a] flex items-center justify-center px-4 my-12">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl">
-        <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-gray-700 text-lg">Name</label>
@@ -29,7 +30,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className=" text-gray-800 w-full p-3 border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
+              className="text-gray-800 w-full p-3 border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
               required
             />
           </div>
@@ -40,7 +41,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="text-gray-800 w-full p-3 border-yellow-500 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
+              className="text-gray-800 w-full p-3 border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg"
               required
             />
           </div>
@@ -50,7 +51,7 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="text-gray-800 w-full border-yellow-500 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg h-32"
+              className="text-gray-800 w-full border border-yellow-500 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg h-32"
               required
             ></textarea>
           </div>
@@ -61,6 +62,25 @@ const Contact = () => {
             Send Message
           </button>
         </form>
+
+        {/* Social Media Links */}
+        <div className="mt-8 text-center">
+          <h3 className="text-xl font-semibold text-gray-700 mb-3">Follow Us</h3>
+          <div className="flex justify-center space-x-6 text-yellow-500 text-2xl">
+            <Link href="#" className="hover:text-yellow-600 transition duration-300">
+              <FaFacebook />
+            </Link>
+            <a href="#" className="hover:text-yellow-600 transition duration-300">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-yellow-600 transition duration-300">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-yellow-600 transition duration-300">
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

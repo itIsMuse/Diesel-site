@@ -62,14 +62,14 @@ const Order = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <div className="min-h-screen bg-[#1b1a1a] flex items-center justify-center px-4 m-12 pb-2">
+      <div className="bg-white/95 p-8 rounded-lg shadow-lg w-full max-w-lg">
         {/* Informational Text */}
-        <p className="text-red-600 text-sm text-center font-semibold mt-9k">
+        <h2 className="text-2xl text-[#1b1a1a] font-bold text-center mb-6">Place Your Order</h2>
+        <p className="text-red-500 text-sm text-center font-semibold mt-9k">
           Price per litre varies according to the local government area in Lagos.
         </p>
 
-        <h2 className="text-2xl font-bold text-center mb-6">Place Your Order</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-gray-700">Name</label>
