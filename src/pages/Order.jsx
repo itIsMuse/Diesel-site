@@ -63,7 +63,7 @@ const Order = () => {
 
   return (
     <div className="min-h-screen bg-[#1b1a1a] flex items-center justify-center px-4 m-12 pb-2">
-      <div className="bg-white/95 p-8 rounded-lg shadow-lg w-full max-w-lg">
+      <div className="bg-white/99 p-8 rounded-lg shadow-lg w-full max-w-2xl">
         {/* Informational Text */}
         <h2 className="text-2xl text-[#1b1a1a] font-bold text-center mb-6">Place Your Order</h2>
         <p className="text-red-500 text-sm text-center font-semibold mt-9k">
@@ -146,6 +146,15 @@ const Order = () => {
           </div>
 
           {/* Display Price per Liter */}
+        
+
+          <button
+            type="submit"
+            onSubmit={handleSubmit}
+            className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+          >
+            Continue
+          </button>
           {pricePerLiter && (
             <div className="text-gray-700 font-semibold">
               Price per Liter: <span className="text-yellow-600">₦{pricePerLiter}</span>
@@ -158,14 +167,6 @@ const Order = () => {
               Total Cost: <span className="text-green-600">₦{totalCost}</span>
             </div>
           )}
-
-          <button
-            type="submit"
-            onSubmit={handleSubmit}
-            className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
-          >
-            Continue
-          </button>
         </form>
       </div>
     </div>
