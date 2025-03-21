@@ -55,11 +55,26 @@ const Order = () => {
     setTotalCost(total);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Order Data:", formData, "Price per liter:", pricePerLiter, "Total Cost:", totalCost);
-    // Paystack integration will be added here
-  };
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwy7ExE4pWV4ZukMaM_c45xLF-YR2vqElW-DLgyK_cCOjsbga3qbxR2u3Bbe8XeOi7x9g/exec"; // Replace with actual URL
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors", // This is important
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    alert("Your message has been saved successfully!");
+    setFormData({ name: "", email: "", message: "", quantity: "", lga: "", address: "" }); // Reset form
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Error submitting form.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#1b1a1a] flex items-center justify-center px-4 m-12 pb-2">
