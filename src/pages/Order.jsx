@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ClipLoader } from "react-spinners";
 
 const Order = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,10 @@ const Order = () => {
     quantity: "",
     location: "",
     address: "",
+    totalCost: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [confirmation, setConfirmation] = useState("");
 
   const [pricePerLiter, setPricePerLiter] = useState(""); // State for price per liter
   const [totalCost, setTotalCost] = useState(""); // State for total cost
@@ -55,10 +59,12 @@ const Order = () => {
     setTotalCost(total);
   };
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwy7ExE4pWV4ZukMaM_c45xLF-YR2vqElW-DLgyK_cCOjsbga3qbxR2u3Bbe8XeOi7x9g/exec"; // Replace with actual URL
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxQSItU7k6P8wD1Cl3VrNJsrC9WWWLK65hirvzoMwdbrlm3zMZ8sv51cWJ--vjIepsN4w/exec"; // Replace with actual URL
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  setLoading(true);
+  setConfirmation(""); // Reset confirmation message
 
   try {
     const response = await fetch(GOOGLE_SHEET_URL, {
@@ -68,11 +74,13 @@ const handleSubmit = async (e) => {
       body: JSON.stringify(formData),
     });
 
-    alert("Your message has been saved successfully!");
-    setFormData({ name: "", email: "", message: "", quantity: "", lga: "", address: "" }); // Reset form
+    setConfirmation("Your message has been saved successfully!");
+    setFormData({ name: "", email: "", message: "", quantity: "", address: "", phone: "", location: "" }); // Reset form
   } catch (error) {
     console.error("Error:", error);
-    alert("Error submitting form.");
+    setConfirmation("Error submitting form.");
+  } finally {
+    setLoading(false);
   }
 };
 
@@ -182,6 +190,12 @@ const handleSubmit = async (e) => {
               Total Cost: <span className="text-green-600">₦{totalCost}</span>
             </div>
           )}
+          {loading ? <ClipLoader color="#ffffff" size={24} /> : "Submit Order"}
+          {confirmation && (
+        <div className="mt-4 p-3 text-center text-white bg-green-600 rounded-lg">
+          {confirmation}
+        </div>
+      )}
         </form>
       </div>
     </div>
