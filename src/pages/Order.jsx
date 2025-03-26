@@ -35,24 +35,23 @@ const Order = () => {
     }
   };
 
-  // Ensure totalCost updates when quantity or pricePerLiter changes
   useEffect(() => {
     if (pricePerLiter && formData.quantity) {
-      setTotalCost(pricePerLiter * formData.quantity);
+      setTotalCost(pricePerLiter * parseInt(formData.quantity));
     } else {
       setTotalCost("");
     }
   }, [pricePerLiter, formData.quantity]);
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwy7ExE4pWV4ZukMaM_c45xLF-YR2vqElW-DLgyK_cCOjsbga3qbxR2u3Bbe8XeOi7x9g/exec"; // Replace with actual URL
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyyFv9ZBAGx7pZrMfj3NQsB79jUhVoRo_el7Y2lx8ye04PGv3u2F9wdQrlEMcHP4dVZag/exec";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setConfirmation("");
-
-    const orderData = { ...formData, totalCost };
-
+  
+    const orderData = { ...formData, totalCost: totalCost.toString() };
+  
     try {
       await fetch(GOOGLE_SHEET_URL, {
         method: "POST",
@@ -60,7 +59,8 @@ const Order = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
       });
-
+  
+      // ✅ Assume Success (since we can't check response)
       setConfirmation("Your order has been submitted. A confirmation email will be sent to you shortly.");
       setFormData({ name: "", email: "", phone: "", quantity: "", address: "", location: "" });
       setPricePerLiter("");
@@ -72,10 +72,10 @@ const Order = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-[#1b1a1a] flex items-center justify-center px-4 m-12 pb-2 relative">
-      {/* Full-Screen Loader */}
       {loading && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
           <ClipLoader color="#ffffff" size={60} />
@@ -130,14 +130,12 @@ const Order = () => {
               className="text-gray-900 border-yellow-300 w-full p-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-100" required />
           </div>
 
-          {/* Display Price per Liter */}
           {pricePerLiter && (
             <div className="text-gray-700 font-semibold">
               Price per Liter: <span className="text-yellow-600">₦{pricePerLiter}</span>
             </div>
           )}
 
-          {/* Display Total Cost */}
           {totalCost && (
             <div className="text-gray-700 font-semibold">
               Total Cost: <span className="text-green-600">₦{totalCost}</span>
